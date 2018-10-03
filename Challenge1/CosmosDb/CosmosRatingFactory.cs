@@ -9,9 +9,9 @@ namespace Challenge1.CosmosDb
         {
             return new CosmosStore<T>(
                 new CosmosStoreSettings(
-                    Environment.GetEnvironmentVariable("CosmosDbDatabaseName"),
-                    Environment.GetEnvironmentVariable("CosmosDbEndpoint"),
-                    Environment.GetEnvironmentVariable("CosmosDbKey")
+                    "Ratings",
+                    "https://openhack.documents.azure.com:443/",
+                    "tE01gxQRxrIW8HPu094Ee6yMUBdVZqX8g0nonVQSrHoDGVcK9aTuwpR2KBQkQ4m8CZLxC2oeL49f5crXs8NlGA=="
                 )
             );
         }
