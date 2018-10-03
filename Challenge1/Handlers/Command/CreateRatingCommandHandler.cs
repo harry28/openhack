@@ -26,9 +26,9 @@ namespace Challenge1.Handlers.Command
             {
                 throw new RatingException($"Rating: {command.rating} should be between 1-5"); 
             }
-            string productUrl = Environment.GetEnvironmentVariable("ProductUrl") + command.productId;
+            string productUrl = "https://serverlessohproduct.trafficmanager.net/api/GetProduct?productid=" + command.productId;
             var product = await GetProductAsync(productUrl);
-            string userUrl = Environment.GetEnvironmentVariable("UserUrl") + command.userId;
+            string userUrl = "https://serverlessohuser.trafficmanager.net/api/GetUser?userId=" + command.userId;
             var user = await GetUserAsync(userUrl);
 
             if (product.StatusCode == HttpStatusCode.OK && user.StatusCode == HttpStatusCode.OK)
